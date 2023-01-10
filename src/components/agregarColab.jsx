@@ -26,6 +26,7 @@ const Agregar = () => {
     return (
         <div className="p-3 " >
             <div className="card-body">
+                <form action="">
                 <div className="form-group p-3">
                     <label htmlFor="exampleInputEmail1">Nombre del colaborador</label>
                     <input type="name" className="form-control"
@@ -40,15 +41,15 @@ const Agregar = () => {
                         onChange={inputCorreo}></input>
                 </div>
                 <div>
-                    <button className='btn btn-primary' onClick={addList}>Agregar Colaborador</button>
+                    <button className='btn btn-primary' type="submit" onClick={addList}>Agregar Colaborador</button>
                 </div>
+                </form>
                 <div>
-                    
                     <Listado 
                     list= {listCol}
-                    
                     />
                 </div>
+               
             </div>
         </div>
     )

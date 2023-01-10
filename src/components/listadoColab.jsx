@@ -4,11 +4,11 @@ import React from "react";
 
 const Listado = ({list}) => {
 
-    console.log(list.id)
+    
     const arrayList = list
     const listado = arrayList.map((e) => {
         return (
-            <li className="list-group-item">{e.nombre} - {e.correo}</li>
+            <li className="list-group-item" key={e.id}>{e.nombre} - {e.correo}</li>
         )
     })
     //const listado = JSON.stringify(list)
