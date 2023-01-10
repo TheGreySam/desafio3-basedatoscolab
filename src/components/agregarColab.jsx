@@ -1,26 +1,27 @@
 import { BaseColaboradores } from '../bd/BaseColaboradores';
 import { useState } from "react";
 import React from "react";
+import Listado from './listadoColab';
 
 const Agregar = () => {
 
-    const [nombreCol, setNombreCol] = useState("")
-    const [correoCol, setCorreoCol] = useState("")
-    const [listaCol, setListaCol] = useState(BaseColaboradores);
+    const [nameCol, setNameCol] = useState("")
+    const [mailCol, setMailCol] = useState("")
+    const [listCol, setListCol] = useState(BaseColaboradores);
 
-    const idCol = Object.keys(listaCol).length
-    const agregarLista = (e) => {
+    const idCol = Object.keys(listCol).length
+    const addList = (e) => {
         (e).preventDefault()
-        setListaCol([...listaCol, {id: JSON.stringify(idCol+1), nombre: nombreCol, correo: correoCol}])
+        setListCol([...listCol, {id: JSON.stringify(idCol+1), nombre: nameCol, correo: mailCol}])
     }
     const inputNombre = (e) => {
-        setNombreCol(e.target.value)
+        setNameCol(e.target.value)
     }
     const inputCorreo = (e) => {
-        setCorreoCol(e.target.value)
+        setMailCol(e.target.value)
     }
 
-    console.log(listaCol);
+    //console.log(listCol);
 
     return (
         <div className="p-3 " >
@@ -39,7 +40,14 @@ const Agregar = () => {
                         onChange={inputCorreo}></input>
                 </div>
                 <div>
-                    <button className='btn btn-primary' onClick={agregarLista}>Agregar Colaborador</button>
+                    <button className='btn btn-primary' onClick={addList}>Agregar Colaborador</button>
+                </div>
+                <div>
+                    
+                    <Listado 
+                    list= {listCol}
+                    
+                    />
                 </div>
             </div>
         </div>

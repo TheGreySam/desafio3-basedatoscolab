@@ -1,25 +1,43 @@
-import { BaseColaboradores } from '../bd/BaseColaboradores';
-import { useState } from "react";
+//import { BaseColaboradores } from '../bd/BaseColaboradores';
+//import { useState } from "react";
 import React from "react";
 
-const Listado = () => {
-    
-    const [listaCol] = useState(BaseColaboradores);
+const Listado = ({list}) => {
 
-
+    console.log(list.id)
+    const arrayList = list
+    const listado = arrayList.map((e) => {
+        return (
+            <li className="list-group-item">{e.nombre} - {e.correo}</li>
+        )
+    })
+    //const listado = JSON.stringify(list)
+    //console.log(listado)
+ 
+    // const listadoCol = listado.map((list) => 
+        
+    //         <li className="list-group-item" key={list.id}>
+    //             {list.nombre - list.correo}
+    //         </li>
+    //     )
     
-    
+                 
     return (
         <div className="p-3 " >
             
             <div className="card-body">
                 <h5 className="card-title p-3">Listado de colaboradores</h5>
-                <ul className="list-group lista">
-                {listaCol.map(BaseColaboradores => 
+                {/* <ul className="list-group lista">
+                {listCol.map(BaseColaboradores => 
                 <li className="list-group-item" key={BaseColaboradores.nombre}>
                     {BaseColaboradores.nombre} - {BaseColaboradores.correo}</li>
                     )}
-                </ul>
+                </ul> */}
+                 <ul className="list-group lista">
+                 
+                {listado}
+                    
+                </ul> 
                     
                 
 
