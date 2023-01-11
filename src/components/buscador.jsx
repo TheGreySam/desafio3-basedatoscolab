@@ -1,7 +1,9 @@
 import React from "react";
+//import { useState } from "react";
 import logo from '../logo.svg';
 
-const Buscador = () => {
+const Buscador = ({search}) => {
+    const filter = search
     return (
         <div className="p-4 bg-dark text-white" >
 
@@ -13,14 +15,15 @@ const Buscador = () => {
                             <div className="">
                                 <h3 className="card-title">
                                 <span><img src={logo} className="App-logo" alt="logo" /></span>
-                                    Buscador de colaboradores
+                                Listado de colaboradores
                                     <span><img src={logo} className="App-logo" alt="logo" /></span>
                                 </h3>
                             </div>
-                            <div className="">
+                            <div className="col align-self-end">
                                 <div className="input-group px-5">
                                     <input type="text" className="form-control" placeholder="Busca un colaborador" 
-                                    aria-label="Buscador de colaboradores" aria-describedby="basic-addon2"></input>
+                                    aria-label="Buscador de colaboradores" aria-describedby="basic-addon2"
+                                    onChange={filter}></input>
                                     <div className="input-group-append">
                                         <button className="btn btn-primary" type="button">Buscar</button>
                                     </div>

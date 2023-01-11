@@ -1,6 +1,6 @@
 import Header from './components/header';
 import Footer from './components/footer';
-import Buscador from './components/buscador';
+//import Buscador from './components/buscador';
 import Agregar from './components/agregarColab';
 //import Listado from './components/listadoColab';
 import React from 'react';
@@ -11,7 +11,7 @@ function App() {
     <div className="App">
       <Header />
       <Agregar />
-      <Buscador />
+      
       
       <Footer />
     </div>
